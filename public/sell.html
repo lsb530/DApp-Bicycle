@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title></title>
+    <style type="text/css">
+      form {
+        line-height:3;
+        font-size: 20px;
+      }
+      input[type=button] {
+        margin-left: 100px;
+        font-size: 20px;
+      }
+    </style>
+    <!-- fs를 이용하기 위한 script 참조 -->
+    <script src="https://wzrd.in/standalone/buffer"></script>
+    <script src="https://unpkg.com/ipfs-api@9.0.0/dist/index.js"
+      integrity="sha384-5bXRcW9kyxxnSMbOoHzraqa7Z0PQWIao+cgeg327zit1hz5LZCEbIMx/LWKPReuB" crossorigin="anonymous">
+      </script>
+    <script src="javascripts/upload.js"></script>
+    <!-- upload 역할 하는 script 참조 -->
+    </head>
+  <body>
+    <div>
+      <h1>자전거 판매 등록</h1>
+      <form action="/">
+        <label for="brand_name">자전거 브랜드 : </label>
+        <select name="brand_name" id="brand_name">
+          <option value="삼천리">삼천리자전거</option>
+          <option value="알톤스포츠">알톤스포츠</option>
+          <option value="써벨로(Cervelo)">써벨로(Cervelo)</option>
+          <option value="아르곤(Argon 18)">아르곤(Argon 18)</option>
+          <option value="BMC">BMC</option>
+          <option value="피나렐로(PINARELLO)">피나렐로(PINARELLO)</option>
+        </select><br />
+        <label for="year">연식 : </label>
+        <input type="text" name="year" id="year" style="width:60px" placeholder="ex)2010"/><br />
+        <label for="price">가격 : </label>
+        <input type="text" name="price" id="price" style="width:160px" placeholder="ex)3[단위:ETH]"/><br />
+        <label>핸드폰번호 : </label>
+        <!-- 13자리를 넘지 않도록 maxlength 제약 걸어놓음 -->
+        <input type="text" name="phone" id="phone" maxlength="13" style="width:150px" placeholder="ex)010-5520-3242"/><br>
+        <input type="file" name="photo" id="photo"/><br>
+        <!-- button에 onlick을 걸어놔서 upload.js안에 upload 함수가 실행되도록 설계 -->
+        <input type="button" value="판매 등록" onclick="upload()"/>
+      </form>
+      <!-- <a id="url"></a>
+      </br>
+      </br>
+      <img id="output"> -->
+    </div>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- 한글 가능하게 하기 위해서 utf-8로 캐릭터셋을 설정 -->
+    <meta charset="utf-8">
+    <!-- 초기화면을 꾸며주는 css -->
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- <script  src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+    <!-- web3 라이브러리 이용 -->
+    <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
+    <!-- main_view의 java script -->
+    <script src="javascripts/main_view.js"></script>
+    <script>
+      // sell버튼의 onclick기능
+      var sell = () => {
+        // content 클래스를 가진 영역에 sell.html을 로드한다.
+        $(".content").load("sell.html"); 
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Bicycle Dapp</h1>
+      </header>
+      <nav id="menu">
+        <a href="index.html">Buy</a>
+        <a href="#" onclick="sell()">Sell</a>
+        <!-- div에 hidden_menu id를 주고 display를 none으로 해서 초기에 보이지 않게함, 보일때는 onclick에 댑을 파괴하는 함수를 걸어놓음-->
+        <div id="hidden_menu" style="display: none;" onclick="dstroy_dapp()"><a href="#" >Destroy Dapp</a></div>
+      </nav>
+      <nav id="info">
+        <!-- CA와 AA, ETH의 정보를 나타내는 nav(div) -->
+        <ul>
+          <li>Contract Address : <span id="contractAddr"></span></li>
+          <li>Account Address : <span id="accountAddr"></span></li>
+          <li>Holding ETH Count : <span id="ethValue"></span></li>
+        </ul>
+      </nav>
+      <section class="content">
+        <!-- data들을 뿌려주는 영역 -->
+        <article id="dataArea">
+        </article>
+      </section>
+      <footer>
+        <p id="company">
+          (주)Ethercycle
+        </p>
+        <p id>
+          All right reserved by KWU &copy; 2019
+        </p>
+        <pre id="students">
+          2014906050 미디어커뮤니케이션학과 김주리
+          2015726100   컴퓨터소프트웨어학과 이승복
+          2014603034            수학과   이현경
+        </pre>
+      </footer>
+    </div>
+  </body>
+</html>
